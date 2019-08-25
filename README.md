@@ -10,11 +10,11 @@ You can download and execute any file with the words "EXECUTABLE" in its title t
 You can start by checking the file's help flag for any additional arguments as shown below
 
 ```bash
-python3 edgeDetectFromFolder.py -h
+python3 edgeDetectEXECUTABLE.py -h
 ```
 which will help you identify how to use the file as such
 ```bash
-usage: edgeDetectFromFolder.py [-h] --i I
+usage: edgeDetectEXECUTABLE.py [-h] --i I
 
 optional arguments:
   -h, --help         show this help message and exit
@@ -23,7 +23,7 @@ optional arguments:
 
 then allowing you to use the file to execute
 ```bash
-python3 edgeDetectFromFolder.py --i "/Users/myUser/Desktop/Images to be Edge Detected"
+python3 edgeDetectEXECUTABLE.py --i "/Users/myUser/Desktop/Images to be Edge Detected"
 ```
 
 
