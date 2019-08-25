@@ -5,7 +5,9 @@ Learning to apply different image processing filters 📷
 This repo contains a variety of image processing techniques I have been exploring. Feel free to download any files with EXECUTABLE in their title and execute them on any images of your choice to perform their specified image processing technique
 
 # How to Use it
-Here's an example use of the edge detection file
+You can download and execute any file with the words "EXECUTABLE" in its title to perform some sort of image processing technique.
+
+You can start by checking the file's help flag for any additional arguments as shown below
 
 ```bash
 python3 edgeDetectFromFolder.py -h
@@ -19,7 +21,7 @@ optional arguments:
   --i , --images     Path to set of input images
 ```
 
-then allowing you to use the file as such
+then allowing you to use the file to execute
 ```bash
 python3 edgeDetectFromFolder.py --i "/Users/myUser/Desktop/Images to be Edge Detected"
 ```
