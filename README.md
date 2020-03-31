@@ -1,8 +1,8 @@
-# ImageProcessingPractice
-Learning to apply different image processing filters 📷
+# ComputerVision
+Learning the ins and outs of computer vision and its various applications 📷
 
-# Learning Image Processing
-This repo contains a variety of image processing techniques I have been exploring. Feel free to download any files with EXECUTABLE in their title and execute them on any images of your choice to perform their specified image processing technique
+# Learning Computer Vision
+This repo contains a variety of computer vision techniques and applications I am in the process of exploring. Feel free to download and run any of the files for some computer vision fun yourself!
 
 # How to Use it
 You can download and execute any file with the words "EXECUTABLE" in its title to perform some sort of image processing technique.
