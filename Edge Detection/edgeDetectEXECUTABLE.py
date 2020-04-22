@@ -31,6 +31,7 @@ for imagePath in glob.glob(args["i"] + "/*.jpg"):
         plt.show()
 
     except Exception as e:
+        print(e)
         pass
 
 print("Done edge detecting all compatible images")
