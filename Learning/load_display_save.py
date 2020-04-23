@@ -5,6 +5,7 @@ import argparse
 ap = argparse.ArgumentParser()
 
 ap.add_argument("-i", "--image", required=True, help="Path to input image file")
+ap.add_argument("-o", "--output", required=True, help="Desired filename for output image")
 
 args = vars(ap.parse_args())
 
@@ -21,4 +22,4 @@ cv2.imshow("Image", image)
 cv2.waitKey(0)
 
 
-cv2.imwrite("newImage.jpg", image)
+cv2.imwrite(args["output"], image)
