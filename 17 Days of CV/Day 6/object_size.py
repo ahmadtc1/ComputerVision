@@ -34,7 +34,7 @@ cnts = imutils.grab_contours(cnts)
 pixelsPerMetric = None
 
 for c in cnts:
-    if cv2.contourArea(c)  < 100:
+    if cv2.contourArea(c)  < 500:
         continue
 
     #Compute the contour's rotated bounding box
