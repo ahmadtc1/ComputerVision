@@ -69,5 +69,16 @@ model.add(Dense(384, activation="relu", kernel_initializer="uniform"))
 model.add(Dense(2))
 model.add(Activation("softmax"))
 
-#Train the model using SGD
+#Train the model using SGD (Stochastic Gradient Descent)
 print("[INFO] compiling model...")
+sgd = SGD(lr=0.01)
+model.compile(loss='binary_crossentropy', optimizer=sgd, metrics=['accuracy'])
+model.fit(trainData, trainLabels, epochs=50, batch_size=128, verbose=1)
+
+#Show the accuracy on the testing set
+print("[INFO] evaluating on testing set")
+(loss, accuracy) = model.evaluate(testData, testLabels, batch_size=128, verbose=1)
+print("[INFO]  loss={:.4f}, accuracy:{:.4f}".format(loss, accuracy * 100))
+
+print("[INFO] dumping architecture and weights to file...")
+model.save(args["model"])
