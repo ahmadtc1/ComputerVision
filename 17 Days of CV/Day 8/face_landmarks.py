@@ -13,7 +13,7 @@ args = vars(ap.parse_args())
 
 #Initialize dlib's face detector which is HOG (Histogram of Oriented Gradients) and then create the facial landmark predictor
 detector = dlib.get_frontal_face_detector()
-predictor = dlib.shape_predictor(args["shape-predictor"])
+predictor = dlib.shape_predictor(args["shape_predictor"])
 
 #Load the image and resize it as well as convert to greyscale
 image = cv2.imread(args["image"])
@@ -27,7 +27,7 @@ for (i, rect) in enumerate(rects):
     
     #Determine facial landmarks for each face
     #Convert the facial landmark coordinates to an np array
-    shape = predictor(gray, rect)
+    shape = predictor(grey, rect)
     shape = face_utils.shape_to_np(shape)
 
     #Convert rectangle to an openCV bounding box (x, y, w, h)
