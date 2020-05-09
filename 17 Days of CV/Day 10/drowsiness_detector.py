@@ -96,7 +96,7 @@ while True:
                     #If an alarm file was supplied start a thread to play the alarm sound in the bg
                     if (args["alarm"] != ""):
 
-                        t = Thread(target=sound_alarm,
+                        t = Thread(target=soundAlarm,
                         args=(args["alarm"],))
                         t.deamon = True
                         t.start()
