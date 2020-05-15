@@ -5,26 +5,32 @@ Learning the ins and outs of computer vision and its various applications 📷
 This repo contains a variety of computer vision techniques and applications I am in the process of exploring. Feel free to download and run any of the files for some computer vision fun yourself!
 
 # How to Use it
-You can download and execute any file with the words "EXECUTABLE" in its title to perform some sort of image processing technique.
+First download the required packages using the requirements.txt file
+```bash
+pip install -r requirements.txt
+```
 
 You can start by checking the file's help flag for any additional arguments as shown below
 
 ```bash
-python3 edgeDetectEXECUTABLE.py -h
+python detect_faces_video.py -h
 ```
 which will help you identify how to use the file as such
 ```bash
-usage: edgeDetectEXECUTABLE.py [-h] --i I
+usage: detect_faces_video.py [-h] --i --m --cI
 
 optional arguments:
-  -h, --help         show this help message and exit
-  --i , --images     Path to set of input images
+  -m, --model         path to the input trained face detection model
+  -c, --confidence     desired confidence when detecting faces
+  -p, --prototxt      path to the prototxt file associated with the model
 ```
 
-then allowing you to use the file to execute
+then allowing you to use the file to execute and see your cool outputs!
 ```bash
-python3 edgeDetectEXECUTABLE.py --i "/Users/myUser/Desktop/Images to be Edge Detected"
+python detect_faces_video.py -c 85 -m f.model -p t.prototxt
 ```
+
+Be sure to check out the 17 Days of Learning as well as Learning for some cool application methods :)
 
 
 
