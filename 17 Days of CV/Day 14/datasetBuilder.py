@@ -18,7 +18,7 @@ args = vars(ap.parse_args())
 
 #Set some constant variables and the endpoint url for the api
 API_KEY = data
-MAX_RESULTS = 200
+MAX_RESULTS = 10
 GROUP_SIZE = 50
 URL = "https://api.cognitive.microsoft.com/bing/v7.0/images/search"
 
