@@ -1,6 +1,9 @@
 # ComputerVision
 Learning the ins and outs of computer vision and its various applications 📷
 
+ - [How To Use It](https://github.com/ahmadtc1/ComputerVision#how-to-use-it)
+ - [Examples](https://github.com/ahmadtc1/ComputerVision#examples)
+
 # Learning Computer Vision
 This repo contains a variety of computer vision techniques and applications I am in the process of exploring. Feel free to download and run any of the files for some computer vision fun yourself!
 
@@ -30,7 +33,19 @@ then allowing you to use the file to execute and see your cool outputs!
 python detect_faces_video.py -c 85 -m f.model -p t.prototxt
 ```
 
-Be sure to check out the 17 Days of Learning as well as Learning for some cool application methods :)
+Be sure to check out the different folders for different cool computer vision applications :)
 
+# Examples
+Here's some of the cv applications you can find throughout this repo. Go ahead and try some of em out yourself!
 
+### Test Scanning With Optical Mark Recognition (OMR)
+![Optical Mark Recognition](/img/omr.jpg)
 
+### Face Detection
+![Face Detection](/img/face_detection.jpg)
+
+### Document Scanning 
+![Document Scanner](/img/document_scanner.jpg)
+
+### Object Measurements
+![Object Measurer](/img/object_measurements.jpg)

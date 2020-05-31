@@ -33,6 +33,8 @@ cnts = imutils.grab_contours(cnts)
 (cnts, _) = contours.sort_contours(cnts)
 pixelsPerMetric = None
 
+outputImg = image.copy()
+
 for c in cnts:
     if cv2.contourArea(c)  < 500:
         continue
@@ -46,10 +48,12 @@ for c in cnts:
     #Order the points topleft, topright, bottomright, bottomleft
     box = perspective.order_points(box)
     cv2.drawContours(orig, [box.astype("int")], -1, (0,255,0), 2)
+    cv2.drawContours(outputImg, [box.astype("int")], -1, (0,255,0), 2)
 
     #Loop over and draw the original points
     for (x, y) in box:
         cv2.circle(orig, (int(x), int(y)), 5, (0,0,255), -1)
+        cv2.circle(outputImg, (int(x), int(y)), 5, (0,0,255), -1)
 
     #Unpack the ordered bounding box and compute the midpoints for the top and bottom edges
     (topleft, topright, bottomright, bottomleft) = box
@@ -66,8 +70,17 @@ for c in cnts:
     cv2.circle(orig, (int(tlblX), int(tlblY)), 5, (255,0,0), -1)
     cv2.circle(orig, (int(trbrX), int(trbrY)), 5, (255,0,0), -1)
 
+    cv2.circle(outputImg, (int(tltrX), int(tltrY)), 5, (255,0,0), -1)
+    cv2.circle(outputImg, (int(blbrX), int(blbrY)), 5, (255,0,0), -1)
+    cv2.circle(outputImg, (int(tlblX), int(tlblY)), 5, (255,0,0), -1)
+    cv2.circle(outputImg, (int(trbrX), int(trbrY)), 5, (255,0,0), -1)
+
     cv2.line(orig, (int(tlblX), int(tlblY)), (int(trbrX), int(trbrY)), (255, 0, 255), 2)
     cv2.line(orig, (int(tltrX), int(tltrY)), (int(blbrX), int(blbrY)), (255, 0, 255), 2)
+
+    cv2.line(outputImg, (int(tlblX), int(tlblY)), (int(trbrX), int(trbrY)), (255, 0, 255), 2)
+    cv2.line(outputImg, (int(tltrX), int(tltrY)), (int(blbrX), int(blbrY)), (255, 0, 255), 2)
+
 
     height = dist.euclidean((tltrX, tltrY), (blbrX, blbrY))
     width = dist.euclidean((tlblX, tlblY), (trbrX, trbrY))
@@ -84,5 +97,11 @@ for c in cnts:
     cv2.putText(orig, "{:.1f}in".format(dimensionsA), (int(tltrX - 15), int(tltrY - 10)), cv2.FONT_HERSHEY_SIMPLEX, 0.65, (255,255,255), 2)
     cv2.putText(orig, "{:.1f}in".format(dimensionsB), (int(trbrX + 10), int(trbrY)), cv2.FONT_HERSHEY_SIMPLEX, 0.65, (255,255,255), 2)
 
+    cv2.putText(outputImg, "{:.1f}in".format(dimensionsA), (int(tltrX - 15), int(tltrY - 10)), cv2.FONT_HERSHEY_SIMPLEX, 0.65, (255,255,255), 2)
+    cv2.putText(outputImg, "{:.1f}in".format(dimensionsB), (int(trbrX + 10), int(trbrY)), cv2.FONT_HERSHEY_SIMPLEX, 0.65, (255,255,255), 2)
+
     cv2.imshow("Midpointed", orig)
     cv2.waitKey(0)
+
+cv2.imshow("Measured", outputImg)
+cv2.waitKey(0)
