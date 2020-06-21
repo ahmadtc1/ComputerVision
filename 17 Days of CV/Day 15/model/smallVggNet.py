@@ -9,7 +9,7 @@ from tensorflow.keras.layers import Flatten
 from tensorflow.keras.layers import Dropout
 from tensorflow.keras import backend as k
 
-class smallVggNet:
+class SmallVggNet:
     @staticmethod
     def build(width, height, depth, classes):
         #Initialize the model
