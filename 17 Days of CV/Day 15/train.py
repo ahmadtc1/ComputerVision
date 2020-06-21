@@ -44,7 +44,7 @@ random.shuffle(imagePaths)
 for imagePath in imagePaths:
     #load the image, apply some pre-processing, and store it in the data list
     image = cv2.imread(imagePath)
-    image = imutils.resize(image, (IMAGE_DIMENSIONS[1], IMAGE_DIMENSIONS[0]))
+    image = cv2.resize(image, (IMAGE_DIMENSIONS[1], IMAGE_DIMENSIONS[0]))
     image = img_to_array(image)
     data.append(image)
 
@@ -81,10 +81,10 @@ aug = ImageDataGenerator(rotation_range=25,
 #initialize the model
 print("[INFO] compiling model...")
 model = SmallVggNet.build(width=IMAGE_DIMENSIONS[1], height=IMAGE_DIMENSIONS[0],
-    depth=IMAGE_DIMENSIONS[2], classes=len(lb.classes()))
+    depth=IMAGE_DIMENSIONS[2], classes=len(lb.classes_))
 optimizer = Adam(lr=INIT_LR, decay=INIT_LR / EPOCHS)
 model.compile(loss="categorical_crossentropy", optimizer=optimizer,
-    metrics["accuracy"])
+    metrics=["accuracy"])
 
 #train the network
 print("[INFO] training network...")
