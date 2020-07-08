@@ -4,6 +4,9 @@
 17\Days\of\CV/Day\9/shape_predictor_68_face_landmarks.dat
 17\ Days\ of\ CV/Day\ 14/api-key.txt
 
+!**/__pycache__/
+**/__pycache__/
+
 *.jpg
 *.png
 *.jpeg
