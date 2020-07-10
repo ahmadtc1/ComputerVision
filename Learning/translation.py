@@ -22,3 +22,18 @@ shifted = cv2.warpAffine(img, M, (img.shape[1], img.shape[0]))
 cv2.imshow("Shifted up and left", shifted)
 
 cv2.waitKey(0)
+
+
+def translate(img, x, y):
+    M = np.float32([ [1, 0, x], [0, 1, y] ])
+    shifted = cv2.warpAffine(img, M, (img.shape[1], img.shape[0]))
+
+    return shifted
+
+image = cv2.imread(args["image"])
+image = translate(image, 0, -300)
+
+height = len(image)
+image[height - 300:][:] = 0xff
+cv2.imshow("Slid down", image)
+cv2.waitKey(0)
