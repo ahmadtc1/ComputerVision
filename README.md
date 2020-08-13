@@ -38,6 +38,9 @@ Be sure to check out the different folders for different cool computer vision ap
 # Examples
 Here's some of the cv applications you can find throughout this repo. Go ahead and try some of em out yourself!
 
+### Object Tracking
+![Object Tracking](/img/objectTracking.gif)
+
 ### Test Scanning With Optical Mark Recognition (OMR)
 ![Optical Mark Recognition](/img/omr.jpg)
 
